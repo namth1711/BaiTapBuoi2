@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1010056912645",
+    "project_id": "bai-lab",
+    "storage_bucket": "bai-lab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010056912645:android:f9d5363ecef71c18aca16c",
+        "android_client_info": {
+          "package_name": "foly.namth.lab1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtfvgRTXQ1l_7or17daZRcV3GtA7Vy2XM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010056912645:android:c77afbcb6ac670f3aca16c",
+        "android_client_info": {
+          "package_name": "fpoly.namth.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtfvgRTXQ1l_7or17daZRcV3GtA7Vy2XM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
