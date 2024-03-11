@@ -9,19 +9,12 @@
     android:gravity="center"
     android:weightSum="100"
     android:padding="10dp"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
 
-
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/chat_icon"
-        app:tint="#4CAF50"
-        android:layout_marginBottom="20dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Register"
         android:gravity="center"
         android:letterSpacing="0.08"
         android:textStyle="bold"
@@ -37,7 +30,45 @@
         android:layout_weight="5"
         >
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Email"
+            android:inputType="text|textEmailAddress"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_rounded_corner"
+            android:elevation="5dp"
+            android:id="@+id/register_email"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:layout_weight="5">
 
+            <com.hbb20.CountryCodePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ccp_showFlag="false"
+                app:ccp_showNameCode="false"
+                android:id="@+id/register_countrycode"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:elevation="5dp"
+                android:id="@+id/register_phone"
+                />
+
+        </LinearLayout>
 
         <EditText
             android:layout_width="match_parent"
@@ -48,7 +79,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_rounded_corner"
             android:elevation="5dp"
-            android:id="@+id/login_uname"
+            android:id="@+id/register_uname"
             />
         <EditText
             android:layout_width="match_parent"
@@ -59,7 +90,18 @@
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_rounded_corner"
             android:elevation="5dp"
-            android:id="@+id/login_password"
+            android:id="@+id/register_password"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Re-password"
+            android:inputType="textPassword"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_rounded_corner"
+            android:elevation="5dp"
+            android:id="@+id/register_repassword"
             />
 
     </LinearLayout>
@@ -72,12 +114,12 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnlogin"
+            android:id="@+id/btnregister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_rounded_corner"
             android:backgroundTint="#00BCD4"
-            android:text="LOGIN"
+            android:text="register"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -89,17 +131,7 @@
         android:gravity="center"
         android:textSize="16sp"
         android:textColor="#000"
-        android:text="@string/phone_number_login"
-        android:id="@+id/tv_login_number_phone"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="5"
-        android:gravity="center"
-        android:textSize="16sp"
-        android:textColor="#000"
-        android:text="Do not have an account? Create"
-        android:id="@+id/tv_register"/>
+        android:text="Already have an account? back"
+        android:id="@+id/tvBack"/>
 
 </LinearLayout>

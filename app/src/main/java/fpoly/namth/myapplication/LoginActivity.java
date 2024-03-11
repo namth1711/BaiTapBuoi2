@@ -25,7 +25,7 @@ import fpoly.namth.myapplication.utils.FirebaseUtil;
 public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     EditText edUsername, edPassword;
-    TextView loginPhoneNumber;
+    TextView loginPhoneNumber,tvRegister;
     FirebaseAuth mAuth;
     UserModel userModel;
     @Override
@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         edPassword = findViewById(R.id.login_password);
         btnLogin = findViewById(R.id.btnlogin);
         loginPhoneNumber = findViewById(R.id.tv_login_number_phone);
-
+        tvRegister = findViewById(R.id.tv_register);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,16 +70,8 @@ public class LoginActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         Log.d("login", "signInWithEmail:success");
                                         Toast.makeText(LoginActivity.this, "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
-                                        FirebaseUtil.currentUserDetails().set(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                if(task.isSuccessful()){
-                                                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
-                                                    startActivity(intent);
-                                                }
-                                            }
-                                        });
+                                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                        startActivity(intent);
                                     } else {
                                         Log.w("login", "signInWithEmail:failure", task.getException());
                                         Toast.makeText(LoginActivity.this, "Đăng Nhập Thất Bại", Toast.LENGTH_SHORT).show();
@@ -93,6 +85,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this,LoginPhoneNumberActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        tvRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
                 finish();
             }
